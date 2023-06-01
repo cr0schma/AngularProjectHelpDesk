@@ -15,8 +15,9 @@ Create Table Tickets (
 );
 
 Create Table Favorites (
-	Id int IDENTITY(1,1),
-	Ticket_Number int
+	Id int IDENTITY(1,1) Primary Key,
+	UserId nvarchar(50),
+	Ticket_Number int Foreign Key References Tickets(Id)
 );
 
 -- 3.
@@ -25,4 +26,4 @@ Values ('John Doe', 'Chris Schmalz', 'Closed', 'No Internet Connectivity', 'Plug
 ('Jane Doe', 'Chris Schmalz', 'Open', 'PC will not turn on', null);
 
 Insert Into Favorites
-Values ('1');
+Values ('Chris Schmalz', 1);
