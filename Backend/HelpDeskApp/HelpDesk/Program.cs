@@ -1,6 +1,29 @@
+using HelpDesk.Models;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddScoped<HelpdeskContext>();
+
+// Add Cors policy
+builder.Services.AddCors(
+    options =>
+    {
+        options.AddPolicy(
+            name: "AllowAny",
+            builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
+            );
+    }
+);
+
+// Let's add our DbContext that creates the connection to our SQL Server
+builder.Services.AddDbContext<HelpdeskContext>(options =>
+{
+    options.UseSqlServer(
+        builder.Configuration["ConnectionStrings:AppUserContextConnection"]); // <----- Make sure you are using the correct connection string. See your appsettings.json
+});
+
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

@@ -26,4 +26,4 @@ Values ('John Doe', 'Chris Schmalz', 'Closed', 'No Internet Connectivity', 'Plug
 ('Jane Doe', 'Chris Schmalz', 'Open', 'PC will not turn on', null);
 
 Insert Into Favorites
-Values ('Chris Schmalz', 1);
+Values ('John Doe', 1);
