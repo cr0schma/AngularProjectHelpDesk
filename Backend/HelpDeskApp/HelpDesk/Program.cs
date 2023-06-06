@@ -1,5 +1,18 @@
+using HelpDesk.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddScoped<HelpDeskContext>();
+
+builder.Services.AddCors(
+    options =>
+    {
+        options.AddPolicy(
+            name: "AllowAny",
+            builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
+            );
+    }
+);
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -15,6 +28,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("AllowAny");
 
 app.UseHttpsRedirection();
 
