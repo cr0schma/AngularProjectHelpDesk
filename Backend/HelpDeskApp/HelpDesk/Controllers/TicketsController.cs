@@ -28,27 +28,27 @@ namespace HelpDesk.Controllers
             return await _context.Tickets.ToListAsync();
         }
 
-        [HttpPost("Bookmark")]
-        public async Task<ActionResult<Favorite>> AddToFavorites(int id)
-        {
-            Ticket ticket = await _context.Tickets.FindAsync(id);
+        //[HttpPost("Bookmark")]
+        //public async Task<ActionResult<Favorite>> AddToFavorites(int id)
+        //{
+        //    Ticket ticket = await _context.Tickets.FindAsync(id);
 
-            if (ticket == null)
-            {
-                return NotFound();
-            }
+        //    if (ticket == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            Favorite favorite = new Favorite
-            {
-                TicketNumber = id,
-                TicketNumberNavigation = ticket
-            };
+        //    Favorite favorite = new Favorite
+        //    {
+        //        TicketNumber = id,
+        //        TicketNumberNavigation = ticket
+        //    };
 
-            _context.Favorites.Add(favorite);
-            _context.SaveChangesAsync();
+        //    _context.Favorites.Add(favorite);
+        //    _context.SaveChangesAsync();
 
-            return Ok();
-        }
+        //    return Ok();
+        //}
 
         // GET api/<TicketsController>/5
         //[HttpGet("{id}")]
