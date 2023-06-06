@@ -4,17 +4,6 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddScoped<HelpDeskContext>();
-
-builder.Services.AddCors(
-    options =>
-    {
-        options.AddPolicy(
-            name: "AllowAny",
-            builder => builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()
-            );
-    }
-);
 // Add services to the container.
 builder.Services.AddScoped<HelpdeskContext>();
 
