@@ -4,13 +4,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace HelpDesk.Models;
 
-public partial class HelpDeskContext : DbContext
+public partial class HelpdeskContext : DbContext
 {
-    public HelpDeskContext()
+    public HelpdeskContext()
     {
     }
 
-    public HelpDeskContext(DbContextOptions<HelpDeskContext> options)
+    public HelpdeskContext(DbContextOptions<HelpdeskContext> options)
         : base(options)
     {
     }
@@ -19,15 +19,11 @@ public partial class HelpDeskContext : DbContext
 
     public virtual DbSet<Ticket> Tickets { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=HelpDesk; Integrated Security=True; Encrypt=false");
-
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Favorite>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Favorite__3214EC07BD518461");
+            entity.HasKey(e => e.Id).HasName("PK__Favorite__3214EC078FE78071");
 
             entity.Property(e => e.TicketNumber).HasColumnName("Ticket_Number");
             entity.Property(e => e.UserId).HasMaxLength(50);
@@ -39,7 +35,7 @@ public partial class HelpDeskContext : DbContext
 
         modelBuilder.Entity<Ticket>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__Tickets__3214EC073B82B062");
+            entity.HasKey(e => e.Id).HasName("PK__Tickets__3214EC074E8FA8B6");
 
             entity.Property(e => e.Assignee).HasMaxLength(50);
             entity.Property(e => e.Reporter).HasMaxLength(50);

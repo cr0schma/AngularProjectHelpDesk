@@ -1,7 +1,6 @@
 ﻿using HelpDesk.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using SQLitePCL;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -11,9 +10,9 @@ namespace HelpDesk.Controllers
     [ApiController]
     public class TicketsController : ControllerBase
     {
-        private readonly HelpDeskContext _context;
+        private readonly HelpdeskContext _context;
         
-        public TicketsController(HelpDeskContext context)
+        public TicketsController(HelpdeskContext context)
         {
             _context = context;
         }
