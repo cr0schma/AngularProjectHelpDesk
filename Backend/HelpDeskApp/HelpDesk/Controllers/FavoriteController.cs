@@ -158,11 +158,5 @@ namespace HelpDesk.Controllers
             return NoContent();
         }
 
-        // PUT api/<FavoriteController>/5
-        /*[HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }*/
-
     }
 }
