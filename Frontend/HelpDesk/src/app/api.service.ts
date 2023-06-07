@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Ticket } from './ticket';
 import { Favorite } from './favorite';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable, of, map, switchMap } from 'rxjs';
+import { Observable } from 'rxjs';
 import { FavoriteWithTicketInfo } from './favorite-with-ticket-info';
 
 
@@ -18,45 +18,45 @@ export class ApiService {
   private readonly url = 'https://localhost:7229/api/'
 
 
-  GetFavorites(){
+  GetFavorites(): Observable<Favorite[]>{
     return this.http.get<Favorite[]>(this.url + 'Favorite');
   }
 
-  GetFavoritesTicketInfo(){
+  GetFavoritesTicketInfo(): Observable<FavoriteWithTicketInfo[]>{
     return this.http.get<FavoriteWithTicketInfo[]>(this.url + 'Favorite/withTicketInfo');
   }
 
-  GetFavorite(reporter: string){
+  GetFavorite(reporter: string): Observable<Favorite>{
     return this.http.get<Favorite>(this.url + 'Favorite/' + reporter);
   }
 
-  AddFavorite(reporter: string, ticketNumber: number){
+  AddFavorite(reporter: string, ticketNumber: number): Observable<Favorite>{
 
     const params = new HttpParams()
       .set('reporter', reporter)
       .set('ticketNumber', ticketNumber);
 
-    return this.http.post(this.url + 'Favorite/' + reporter + '/' + ticketNumber, null, { params: params });
+    return this.http.post<Favorite>(this.url + 'Favorite/' + reporter + '/' + ticketNumber, null, { params: params });
   }
   
-  DeleteFavorite(id: number){
-    return this.http.delete(this.url + 'Favorite/' + id);
+  DeleteFavorite(id: number): Observable<Favorite>{
+    return this.http.delete<Favorite>(this.url + 'Favorite/' + id);
   }
 
-  getAllTickets(): Observable<Ticket[]> {
+  getAllTickets(): Observable<Ticket[]>{
     return this.http.get<Ticket[]>(this.url + 'Tickets/AllTickets');
   }
 
-  AddTicket(ticketToAdd: Ticket){
-    return this.http.post(this.url + 'Tickets/NewTicket', ticketToAdd);
+  AddTicket(ticketToAdd: Ticket): Observable<Ticket[]>{
+    return this.http.post<Ticket[]>(this.url + 'Tickets/NewTicket', ticketToAdd);
   }
 
-  UpdateTicket(id: number, ticketToUpdate: Ticket) {
-    return this.http.patch(this.url + 'Tickets/UpdateTicket/' + id, ticketToUpdate);
+  UpdateTicket(id: number, ticketToUpdate: Ticket): Observable<Ticket> {
+    return this.http.patch<Ticket>(this.url + 'Tickets/UpdateTicket/' + id, ticketToUpdate);
   }
 
-  DeleteTicket(id: number){
-    return this.http.delete(this.url + 'Tickets/DeleteTicket/' + id);
+  DeleteTicket(id: number): Observable<Ticket>{
+    return this.http.delete<Ticket>(this.url + 'Tickets/DeleteTicket/' + id);
   }
 
 }

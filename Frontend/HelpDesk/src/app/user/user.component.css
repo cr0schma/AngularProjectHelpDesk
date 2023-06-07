@@ -1,0 +1,10 @@
+table {
+    border: 1px solid black;
+    padding: 5pt;
+    margin: 5pt;
+  }
+
+  th, td {
+    text-align: left;
+    padding: 3pt;
+  }

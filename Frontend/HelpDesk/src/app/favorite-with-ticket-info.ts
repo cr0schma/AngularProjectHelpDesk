@@ -1,11 +1,11 @@
 import { Favorite } from "./favorite"
 
 export interface FavoriteWithTicketInfo {
-    Id?: number,
-    Reporter: string,
-    Assignee: string,
-    Status: string,
-    Title: string,
-    Resolution: string | null,
-    Favorites: Favorite[]
+    id?: number,
+    reporter: string,
+    assignee: string,
+    status: string,
+    title: string,
+    resolution: string | null,
+    favorites: Favorite[]
 }

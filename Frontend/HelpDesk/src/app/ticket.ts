@@ -1,8 +1,8 @@
 export interface Ticket {
-    Id?: number,
-    Reporter: string,
-    Assignee: string,
-    Status: string,
-    Title: string,
-    Resolution: string | null
+    id?: number,
+    reporter: string,
+    assignee: string,
+    status: string,
+    title: string,
+    resolution: string | null
 }

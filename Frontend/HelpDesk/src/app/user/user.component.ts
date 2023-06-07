@@ -11,45 +11,45 @@ import { FavoriteWithTicketInfo } from '../favorite-with-ticket-info';
 })
 export class UserComponent implements OnInit {
 
-  ticketList: Ticket[] = [];
-  favoriteList: Favorite[] = [];
-  favoriteWithTicketInfoList: FavoriteWithTicketInfo[] = []
+ticketList: Ticket[] = [];
+favoriteList: Favorite[] = [];
+favoriteWithTicketInfoList: FavoriteWithTicketInfo[] = []
 
   constructor(private apiService: ApiService){}
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
 
     // const testTicket: Ticket = {
-    //   Reporter: 'Bill',
-    //   Assignee: 'Scott',
-    //   Status: 'Open',
-    //   Title: 'API dont work still!!',
-    //   Resolution: null
+    //   reporter: 'Bill',
+    //   assignee: 'Scott',
+    //   status: 'Open',
+    //   title: 'API dont work still!!',
+    //   resolution: null
     // }
 
     // const testFavorite: Favorite = {
-    //   UserId: 'Mac',
-    //   Ticket_Number : 2
+    //   userId: 'Mac',
+    //   ticketNumber : 2
     // }
 
     // const testUpdateTicket: Ticket = {
-    //   Reporter: 'Bill',
-    //   Assignee: 'Scott',
-    //   Status: 'Open',
-    //   Title: 'API dont work still!!',
-    //   Resolution: 'Rebooted server - API works now'
+    //   reporter: 'Joe',
+    //   assignee: 'new name',
+    //   status: 'Closed',
+    //   title: 'API dont work still!! even now!',
+    //   resolution: 'Rebooted server - API works now'
     // }
 
-    // this.GetFavorites();
-    // this.GetFavoritesTicketInfo();
-    // this.GetFavorite('John Doe');
+    //this.GetFavorites();
+    //this.GetFavoritesTicketInfo();
+    //this.GetFavorite('John Doe');
     //this.AddFavorite(testFavorite);
 
-    // this.getAllTickets();
+    //this.getAllTickets();
     //this.AddTicket(testTicket)
-    //this.DeleteFavorite(13)
-    //this.UpdateTicket(8, testUpdateTicket);
-    //this.DeleteTicket(4);
+    //this.DeleteFavorite(1)
+    //this.UpdateTicket(3, testUpdateTicket);
+    //this.DeleteTicket(1);
 
     this.apiService.GetFavorites()
     .subscribe(result => {
@@ -93,7 +93,7 @@ export class UserComponent implements OnInit {
   }
 
   AddFavorite(favoriteToAdd: Favorite){
-    this.apiService.AddFavorite(favoriteToAdd.UserId, favoriteToAdd.Ticket_Number)
+    this.apiService.AddFavorite(favoriteToAdd.userId, favoriteToAdd.ticketNumber)
     .subscribe(result => {
       console.log(favoriteToAdd);
     }); 

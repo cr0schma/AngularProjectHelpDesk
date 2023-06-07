@@ -1,0 +1,53 @@
+<h1>ticketList</h1>
+    <ng-container *ngIf="ticketList.length">
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Reporter</th>
+                <th>Assignee</th>
+                <th>Status</th>
+                <th>Title</th>
+            </tr>
+            <tr *ngFor="let item of ticketList">
+                <td>{{item.id}}</td>
+                <td>{{item.reporter}}</td>
+                <td>{{item.assignee}}</td>
+                <td>{{item.status}}</td>
+                <td>{{item.title}}</td>
+            </tr>
+        </table>
+    </ng-container>
+<h1>favoriteList</h1>
+    <ng-container *ngIf="favoriteList.length">
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>user Id</th>
+                <th>Ticket Number</th>
+            </tr>
+            <tr *ngFor="let item of favoriteList">
+                <td>{{item.id}}</td>
+                <td>{{item.userId}}</td>
+                <td>{{item.ticketNumber}}</td>
+            </tr>
+        </table>
+    </ng-container>
+<h1>favoriteWithTicketInfoList</h1>
+    <ng-container *ngIf="ticketList.length">
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Reporter</th>
+                <th>Assignee</th>
+                <th>Status</th>
+                <th>Title</th>
+            </tr>
+            <tr *ngFor="let item of favoriteWithTicketInfoList">
+                <td>{{item.id}}</td>
+                <td>{{item.reporter}}</td>
+                <td>{{item.assignee}}</td>
+                <td>{{item.status}}</td>
+                <td>{{item.title}}</td>
+            </tr>
+        </table>
+    </ng-container>
