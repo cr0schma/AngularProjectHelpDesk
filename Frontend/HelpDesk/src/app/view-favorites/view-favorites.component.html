@@ -1,20 +1,26 @@
 <h1>Favorites</h1>
     <ng-container *ngIf="favoriteWithTicketInfoList.length">
         <table class="table-container">
-            <tr>
-                <th>Id</th>
-                <th>Reporter</th>
-                <th>Assignee</th>
-                <th>Status</th>
-                <th>Title</th>
-            </tr>
-            <tr *ngFor="let item of favoriteWithTicketInfoList">
-                <td>{{item.id}}</td>
-                <td>{{item.reporter}}</td>
-                <td>{{item.assignee}}</td>
-                <td>{{item.status}}</td>
-                <td>{{item.title}}</td>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Reporter</th>
+                    <th>Assignee</th>
+                    <th>Status</th>
+                    <th>Title</th>
+                </tr>
+                
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of favoriteWithTicketInfoList">
+                    <td>{{item.id}}</td>
+                    <td>{{item.reporter}}</td>
+                    <td>{{item.assignee}}</td>
+                    <td>{{item.status}}</td>
+                    <td>{{item.title}}</td>
+                </tr>
+            
+            </tbody>
         </table>
     </ng-container>
     <div class="center">
