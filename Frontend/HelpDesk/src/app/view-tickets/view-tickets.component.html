@@ -1,0 +1,16 @@
+
+<div *ngFor="let ticket of tickets">
+    <button (click)="getTicket(ticket)">{{ticket.id}}: {{ticket.reporter}}</button>
+</div>
+<div *ngIf="ticket.reporter != ''">
+<p>ID: {{ticket.id}}</p>
+<p>Reporter: {{ticket.reporter}}</p>
+<p>Assignee: {{ticket.assignee}}</p>
+<p>Status:{{ticket.status}}</p>
+<p>Title: {{ticket.title}}</p>
+<p>Resolution: {{ticket.resolution}}</p>
+<button (click)="AddFavorite(ticket.reporter, ticket.id)" >Make Favorite</button>
+<button routerLink="/update-ticket" >Update Ticket</button>
+</div>
+<button routerLink="/view-favorites">Favorites</button>
+<button routerLink="/add-ticket">Add Ticket</button>

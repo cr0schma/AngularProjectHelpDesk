@@ -1,5 +1,5 @@
 export interface Ticket {
-    id?: number,
+    id: number,
     reporter: string,
     assignee: string,
     status: string,

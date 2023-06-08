@@ -19,13 +19,14 @@ favoriteWithTicketInfoList: FavoriteWithTicketInfo[] = []
 
   async ngOnInit(): Promise<void> {
 
-    // const testTicket: Ticket = {
-    //   reporter: 'Bill',
-    //   assignee: 'Scott',
-    //   status: 'Open',
-    //   title: 'API dont work still!!',
-    //   resolution: null
-    // }
+    const testTicket: Ticket = {
+      id: 0,
+      reporter: 'Bill',
+      assignee: 'Scott',
+      status: 'Open',
+      title: 'API dont work still!!',
+      resolution: null
+    }
 
     // const testFavorite: Favorite = {
     //   userId: 'Mac',
@@ -46,7 +47,7 @@ favoriteWithTicketInfoList: FavoriteWithTicketInfo[] = []
     //this.AddFavorite(testFavorite);
 
     //this.getAllTickets();
-    //this.AddTicket(testTicket)
+    this.AddTicket(testTicket)
     //this.DeleteFavorite(1)
     //this.UpdateTicket(3, testUpdateTicket);
     //this.DeleteTicket(1);

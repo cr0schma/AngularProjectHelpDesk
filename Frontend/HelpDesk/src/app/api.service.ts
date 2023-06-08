@@ -30,6 +30,15 @@ export class ApiService {
     return this.http.get<Favorite>(this.url + 'Favorite/' + reporter);
   }
 
+  // AddFavorite(reporter: string, ticketNumber: number): Observable<Favorite>{
+
+  //   const params = new HttpParams()
+  //     .set('reporter', reporter)
+  //     .set('ticketNumber', ticketNumber);
+
+  //   return this.http.post<Favorite>(this.url + 'Favorite/' + reporter + '/' + ticketNumber, null, { params: params });
+  // }
+  
   AddFavorite(reporter: string, ticketNumber: number): Observable<Favorite>{
 
     const params = new HttpParams()
@@ -38,7 +47,7 @@ export class ApiService {
 
     return this.http.post<Favorite>(this.url + 'Favorite/' + reporter + '/' + ticketNumber, null, { params: params });
   }
-  
+
   DeleteFavorite(id: number): Observable<Favorite>{
     return this.http.delete<Favorite>(this.url + 'Favorite/' + id);
   }
