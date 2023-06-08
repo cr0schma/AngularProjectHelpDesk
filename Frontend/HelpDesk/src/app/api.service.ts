@@ -14,7 +14,7 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
 
-  //api url needs to be updated
+  //api url may need to be updated
   private readonly url = 'https://localhost:7229/api/'
 
 
@@ -29,7 +29,7 @@ export class ApiService {
   GetFavorite(reporter: string): Observable<Favorite>{
     return this.http.get<Favorite>(this.url + 'Favorite/' + reporter);
   }
-
+  
   AddFavorite(reporter: string, ticketNumber: number): Observable<Favorite>{
 
     const params = new HttpParams()
@@ -38,7 +38,7 @@ export class ApiService {
 
     return this.http.post<Favorite>(this.url + 'Favorite/' + reporter + '/' + ticketNumber, null, { params: params });
   }
-  
+
   DeleteFavorite(id: number): Observable<Favorite>{
     return this.http.delete<Favorite>(this.url + 'Favorite/' + id);
   }

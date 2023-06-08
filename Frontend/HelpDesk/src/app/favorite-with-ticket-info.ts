@@ -1,7 +1,7 @@
 import { Favorite } from "./favorite"
 
 export interface FavoriteWithTicketInfo {
-    id?: number,
+    id: number,
     reporter: string,
     assignee: string,
     status: string,
