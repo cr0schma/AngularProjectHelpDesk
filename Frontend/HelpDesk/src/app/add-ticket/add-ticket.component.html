@@ -1,4 +1,6 @@
-<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+<div class="center">
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
     <div>
       <label for="reporter">Reporter:</label>
       <input id="reporter" type="text" formControlName="reporter">
@@ -17,3 +19,4 @@
       </div>  
     <button type="submit">Submit</button>
   </form>
+</div>
