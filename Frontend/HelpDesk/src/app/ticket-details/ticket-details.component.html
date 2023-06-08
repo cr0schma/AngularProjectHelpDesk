@@ -1,0 +1,41 @@
+
+<h1>Help Desk</h1>
+
+    <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Reporter</th>
+              <th>Assignee</th>
+              <th>Status</th>
+              <th>Title</th>
+              <th>Resolution</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <!-- Inside the table -->
+    <tbody>
+        <ng-container *ngFor="let ticket of tickets">
+          <tr>
+            <td>{{ticket.id}}</td>
+            <td>{{ticket.reporter }}</td>
+            <td>{{ ticket.assignee }}</td>
+            <td>{{ ticket.status }}</td>
+            <td>{{ ticket.title }}</td>
+            <td>{{ ticket.resolution }}</td>
+            <td>
+                <button (click)="AddFavorite(ticket.reporter, ticket.id)">Make Favorite</button>
+                <button (click)="routeToUpdateTicket(ticket.id)">Update Ticket</button>
+              </td>
+          </tr>
+        </ng-container>
+      </tbody>
+      
+        </table>
+      </div>
+      <div class="center">
+        <button routerLink="/view-favorites">Favorites</button>
+        <button routerLink="/add-ticket">Add Ticket</button> 
+      </div>
+      

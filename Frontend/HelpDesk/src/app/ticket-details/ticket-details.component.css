@@ -1,9 +1,12 @@
+
 h1 {
     text-align: center;
   }
+
 .center {
     text-align: center;
   }
+
 
 table {
     border-collapse: collapse;
@@ -17,7 +20,7 @@ table {
   }
   
   thead {
-    background-color: #599bbf;
+    background-color: #7dbea7;
     font-weight: bold;
   }
   
@@ -25,13 +28,13 @@ table {
     background-color: #a8efde;
   }
   
-  tbody tr:hover {
+  /* tbody tr:hover {
     background-color: #7a997c;
     transform: scale(1.05);
     transition: transform 0.3s ease-in-out;
     z-index: 1;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
+  } */
   
   th, td {
     border: none;
@@ -43,7 +46,13 @@ table {
     margin: 20px auto;
     overflow: visible;
     border-radius: 10px;
+  }
+
+  .table-container table {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+  .table-container td:last-child {
+    padding-right: 20px; /* Adjust the padding value as needed */
   }
   
   .table-container table {

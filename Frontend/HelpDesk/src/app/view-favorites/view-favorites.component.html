@@ -1,6 +1,6 @@
-<h1>favoriteWithTicketInfoList</h1>
+<h1>Favorites</h1>
     <ng-container *ngIf="favoriteWithTicketInfoList.length">
-        <table>
+        <table class="table-container">
             <tr>
                 <th>Id</th>
                 <th>Reporter</th>
@@ -17,5 +17,8 @@
             </tr>
         </table>
     </ng-container>
-    <button routerLink="/">Tickets</button>
+    <div class="center">
+        <button routerLink="/">Tickets</button>
+    </div>
+    
 
