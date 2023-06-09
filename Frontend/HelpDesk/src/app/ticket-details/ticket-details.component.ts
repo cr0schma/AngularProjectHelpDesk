@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import { Favorite } from '../favorite';
 import { Ticket } from '../ticket';
-import { ApiService } from '../api.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { Favorite } from '../favorite';
 import { FavoriteWithTicketInfo } from '../favorite-with-ticket-info';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Router, NavigationExtras  } from '@angular/router';
+import { ApiService } from '../api.service';
+import { NavigationExtras, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-view-tickets',
-  templateUrl: './view-tickets.component.html',
-  styleUrls: ['./view-tickets.component.css']
+  selector: 'app-ticket-details',
+  templateUrl: './ticket-details.component.html',
+  styleUrls: ['./ticket-details.component.css']
 })
-export class ViewTicketsComponent implements OnInit {
+export class TicketDetailsComponent implements OnInit {
 
   userForm: FormGroup;
 
@@ -85,7 +85,6 @@ export class ViewTicketsComponent implements OnInit {
     }
     getTicket(ticket: Ticket) {
       this.ticket = ticket
-      this.router.navigate(['/ticket-details']);
     }
 
 }

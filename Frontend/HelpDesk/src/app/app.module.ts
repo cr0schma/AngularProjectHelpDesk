@@ -11,6 +11,7 @@ import { ViewFavoritesComponent } from './view-favorites/view-favorites.componen
 import { AddTicketComponent } from './add-ticket/add-ticket.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UpdateTicketComponent } from './update-ticket/update-ticket.component';
+import { TicketDetailsComponent } from './ticket-details/ticket-details.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UpdateTicketComponent } from './update-ticket/update-ticket.component';
     ViewTicketsComponent,
     ViewFavoritesComponent,
     AddTicketComponent,
-    UpdateTicketComponent
+    UpdateTicketComponent,
+    TicketDetailsComponent
   ],
   imports: [
     BrowserModule,
